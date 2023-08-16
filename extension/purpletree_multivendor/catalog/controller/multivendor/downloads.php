@@ -562,14 +562,15 @@ class Downloads extends \Opencart\System\Engine\Controller {
 					
 					// Allowed file extension types
 					$allowed = array();
+					$allowed = array('pdf','mov','mp4');
 					
-					$extension_allowed = preg_replace('~\r?\n~', "\n", $this->config->get('config_file_ext_allowed'));
+					/*$extension_allowed = preg_replace('~\r?\n~', "\n", $this->config->get('config_file_ext_allowed'));
 					
 					$filetypes = explode("\n", $extension_allowed);
 					
 					foreach ($filetypes as $filetype) {
 						$allowed[] = trim($filetype);
-					}
+					}*/
 					
 					if (!in_array(strtolower(substr(strrchr($filename, '.'), 1)), $allowed)) {
 						$json['error'] = $this->language->get('error_filetype');
@@ -577,14 +578,15 @@ class Downloads extends \Opencart\System\Engine\Controller {
 					
 					// Allowed file mime types
 					$allowed = array();
+					$allowed = array('application/pdf','video/quicktime','video/mp4');
 					
-					$mime_allowed = preg_replace('~\r?\n~', "\n", $this->config->get('config_file_mime_allowed'));
+					/*$mime_allowed = preg_replace('~\r?\n~', "\n", $this->config->get('config_file_mime_allowed'));
 					
 					$filetypes = explode("\n", $mime_allowed);
 					
 					foreach ($filetypes as $filetype) {
 						$allowed[] = trim($filetype);
-					}
+					}*/
 					
 					if (!in_array($this->request->files['file']['type'], $allowed)) {
 						$json['error'] = $this->language->get('error_filetype');
@@ -601,14 +603,14 @@ class Downloads extends \Opencart\System\Engine\Controller {
 					if ($this->request->files['file']['error'] != UPLOAD_ERR_OK) {
 						$json['error'] = $this->language->get('error_upload_' . $this->request->files['file']['error']);
 					}
-					} else {
+				} else {
 					$json['error'] = $this->language->get('error_upload');
 				}
 			}
 			
 			if (!$json) {
 				if(version_compare(VERSION, '4.0.0.0', '>')){
-					$file = $filename . '.' . Helper\General\token(32);
+					$file = $filename . '.' . Helper\General\oc_token(32);
 				}else{
 					$file = $filename . '.' . token(32);
 				}

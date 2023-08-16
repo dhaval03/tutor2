@@ -1,9 +1,13 @@
 <?php
 namespace Opencart\Catalog\Model\Extension\PurpletreeMultivendor\Multivendor;
+//namespace Opencart\System\Library\AWS;
+require(DIR_SYSTEM.'library/AWS/S3.php');
 class Downloads extends \Opencart\System\Engine\Model {
-		
+		private $bucketName = 'tutor-flutter';
 		public function addDownload($data) {
-			$this->db->query("INSERT INTO " . DB_PREFIX . "download SET filename = '" . $this->db->escape($data['filename']) . "', mask = '" . $this->db->escape($data['mask']) . "', date_added = NOW()");
+			$upload_result = $this->addS3Object($this->db->escape($data['mask']),$this->db->escape($data['filename']));
+			
+			$this->db->query("INSERT INTO " . DB_PREFIX . "download SET url = '".$this->db->escape($upload_result->get("ObjectURL"))."', filename = '" . $this->db->escape($data['filename']) . "', mask = '" . $this->db->escape($data['mask']) . "', date_added = NOW()");
 			
 			$download_id = $this->db->getLastId();
 			
@@ -16,7 +20,9 @@ class Downloads extends \Opencart\System\Engine\Model {
 		}
 		
 		public function editDownload($download_id, $data) {
-			$this->db->query("UPDATE " . DB_PREFIX . "download SET filename = '" . $this->db->escape($data['filename']) . "', mask = '" . $this->db->escape($data['mask']) . "' WHERE download_id = '" . (int)$download_id . "'");
+			$upload_result = $this->addS3Object($this->db->escape($data['mask']),$this->db->escape($data['filename']));
+			
+			$this->db->query("UPDATE " . DB_PREFIX . "download SET url = '".$this->db->escape($upload_result->get("ObjectURL"))."', filename = '" . $this->db->escape($data['filename']) . "', mask = '" . $this->db->escape($data['mask']) . "' WHERE download_id = '" . (int)$download_id . "'");
 			
 			$this->db->query("DELETE FROM " . DB_PREFIX . "download_description WHERE download_id = '" . (int)$download_id . "'");
 			
@@ -103,5 +109,10 @@ class Downloads extends \Opencart\System\Engine\Model {
 			$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "product_to_download WHERE download_id = '" . (int)$download_id . "'");
 			
 			return $query->row['total'];
+		}
+		private function addS3Object($fileName,$file){
+			$s3 = new Opencart\System\Library\AWS\S3();
+			$s3_result = $s3->putObject('vendors/'.$fileName,$this->bucketName,DIR_DOWNLOAD.$file);
+			return $s3_result;
 		}
 }
