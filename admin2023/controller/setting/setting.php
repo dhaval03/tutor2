@@ -55,7 +55,6 @@ class Setting extends \Opencart\System\Engine\Controller {
 		$data['layouts'] = $this->model_design_layout->getLayouts();
 
 		$data['config_layout_id'] = $this->config->get('config_layout_id');
-
 		// Store Details
 		$data['config_name'] = $this->config->get('config_name');
 		$data['config_owner'] = $this->config->get('config_owner');
@@ -593,6 +592,18 @@ class Setting extends \Opencart\System\Engine\Controller {
 		$data['config_seo_url'] = $this->config->get('config_seo_url');
 		$data['config_robots'] = $this->config->get('config_robots');
 		$data['config_compression'] = $this->config->get('config_compression');
+		
+		//AWS
+		if ($this->config->get('config_amazon_accesskey')) {
+			$data['config_amazon_accesskey'] = $this->config->get('config_amazon_accesskey');
+		} else {
+			$data['config_amazon_accesskey'] = '';
+		}
+		if ($this->config->get('config_amazon_secretkey')) {
+			$data['config_amazon_secretkey'] = $this->config->get('config_amazon_secretkey');
+		} else {
+			$data['config_amazon_secretkey'] = '';
+		}
 
 		// Security
 		$data['config_security'] = $this->config->get('config_security');

@@ -622,7 +622,7 @@
 						</div>
 					</div>
 					{% endif %}
-					<div class="pts-form-group row">
+					<div class="pts-form-group row hide">
 						<label class="pts-col-sm-2 col-form-label" for="input-manufacturer"><span data-toggle="tooltip" title="{{ help_manufacturer }}">{{ entry_manufacturer }}</span></label>
 						<div class="pts-col-sm-10">
 							<input type="text" name="manufacturer" value="{{ manufacturer }}" placeholder="{{ entry_manufacturer }}" id="input-manufacturer" class="pts-form-control" />
@@ -689,13 +689,77 @@
 					</div>
 					<div class="pts-form-group row">
 						<label class="pts-col-sm-2 col-form-label" for="input-download"><span data-toggle="tooltip" title="{{ help_download }}">{{ entry_download }}</span></label>
-						<div class="pts-col-sm-10">
+						<div class="pts-col-sm-9">
 							<input type="text" name="download" value="" placeholder="{{ entry_download }}" id="input-download" class="pts-form-control" />
 							<div id="product-download" class="well well-sm ptsc-product-heigoflow"> {% for product_download in product_downloads %}
 								<div id="product-download{{ product_download.download_id }}"><i class="fa fa-minus-circle"></i> {{ product_download.name }}
+								<!-- <span class="pts-input-group-pts-btn"> -->
+									<!-- <button type="button" id="button-upload" data-loading-text="{{ text_loading }}" class="pts-btn pts-btn-primary"><i class="fa fa-upload"></i> {{ button_upload }}</button> -->
+								<!-- </span> -->
 									<input type="hidden" name="product_download[]" value="{{ product_download.download_id }}" />
 								</div>
 							{% endfor %}</div>
+							
+
+						</div>
+						<div class="pts-col-sm-1">
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+							  Upload File
+							</button>
+
+							<!-- Modal -->
+							<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							  <div class="modal-dialog">
+								<div class="modal-content">
+								  <div class="modal-header">
+									<h1 class="modal-title fs-5" id="exampleModalLabel">Material</h1>
+									<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+								  </div>
+								  <div class="modal-body">
+									<div class="pts-form-group required">
+										<label class="pts-col-sm-2 pts-control-label">{{ entry_name }}</label>
+										<div class="pts-col-sm-10">
+											{% for language in languages %}
+											<div class="pts-input-group"> <span class="pts-input-group-addon"><img src="catalog/language/{{ language.code }}/{{ language.code }}.png" title="{{ language.name }}" /></span>
+												<input type="text" name="download_description[{{ language.language_id }}][name]" value="{{ download_description[language.language_id] ? download_description[language.language_id].name }}" placeholder="{{ entry_name }}" class="pts-form-control download_name" />
+											</div>
+											{% if error_name[language.language_id] %}
+											<div class="text-danger">{{ error_name[language.language_id] }}</div>
+											{% endif %}
+											{% endfor %}
+										</div>
+									</div>
+									<div class="pts-form-group required">
+										<label class="pts-col-sm-2 pts-control-label" for="input-filename"><span data-toggle="tooltip" title="{{ help_filename }}">{{ entry_filename }}</span></label>
+										<div class="pts-col-sm-10">
+											<div class="pts-input-group d-flex ptsc-commison-display">
+												<input type="text" name="filename" value="{{ filename }}" placeholder="{{ entry_filename }}" id="input-filename" class="pts-form-control" />
+												<span class="pts-input-group-pts-btn">
+													<button type="button" id="button-upload" data-loading-text="{{ text_loading }}" class="pts-btn pts-btn-primary"><i class="fa fa-upload"></i> {{ button_upload }}</button>
+												</span> </div>
+												{% if error_filename %}
+												<div class="text-danger">{{ error_filename }}</div>
+												{% endif %}
+										</div>
+									</div>
+									<div class="pts-form-group required">
+										<label class="pts-col-sm-2 pts-control-label" for="input-mask"><span data-toggle="tooltip" title="{{ help_mask }}">{{ entry_mask }}</span></label>
+										<div class="pts-col-sm-10">
+											<input type="text" name="mask" value="{{ mask }}" placeholder="{{ entry_mask }}" id="input-mask" class="pts-form-control" />
+											{% if error_mask %}
+											<div class="text-danger">{{ error_mask }}</div>
+											{% endif %}
+										</div>
+									</div>
+								  </div>
+								  <div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-primary" id="button-download-save">Save</button>
+								  </div>
+								</div>
+							  </div>
+							</div>
+
 						</div>
 					</div>
 					{% if related_approval %} 
@@ -1269,7 +1333,7 @@
 				<div class="pts-tab-pane" id="tab-seo">
 					<div class="alert alert-info"><i class="fa fa-info-circle"></i> {{ text_keyword }}</div>            
 					<div class="pts-table-responsive">
-						<table class="pts-table pts-table-bordered pts-table-hover">
+						<table class="pts-table pts-table-bordered pts-table-hover overflow-x-hidden">
 							<thead>
 								<tr>
 									<td class="pts-text-left">{{ entry_store }}</td>
@@ -1969,5 +2033,99 @@
 		}      
   });
 	{% endif %}
+//--></script>
+<script type="text/javascript"><!--
+	$('#button-upload').on('click', function() {
+		$('#form-upload').remove();
+		
+		$('body').prepend('<form enctype="multipart/form-data" id="form-upload" class="ptsc-productl-nodisplay"><input type="file" name="file" /></form>');
+		
+		$('#form-upload input[name=\'file\']').trigger('click');
+		
+		if (typeof timer != 'undefined') {
+			clearInterval(timer);
+		}
+		
+		timer = setInterval(function() {
+			if ($('#form-upload input[name=\'file\']').val() != '') {
+				clearInterval(timer);
+				
+				$.ajax({
+					url: 'index.php?route=extension/purpletree_multivendor/multivendor/downloads|upload',
+					type: 'post',
+					dataType: 'json',
+					data: new FormData($('#form-upload')[0]),
+					cache: false,
+					contentType: false,
+					processData: false,
+					beforeSend: function() {
+						$('#button-upload').button('loading');
+					},
+					complete: function() {
+						$('#button-upload').button('reset');
+					},
+					success: function(json) {
+						if (json['error']) {
+							alert(json['error']);
+						}
+						
+						if (json['success']) {
+							alert(json['success']);
+							
+							$('input[name=\'filename\']').val(json['filename']);
+							$('input[name=\'mask\']').val(json['mask']);
+						}
+					},
+					error: function(xhr, ajaxOptions, thrownError) {
+						alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+					}
+				});
+			}
+		}, 500);
+	});
+	
+	
+	$('#button-download-save').on('click', function () {
+		$('#error-filename').empty();
+		$('#error-mask').empty();								
+		var name_length = $('.download_name').val().length;
+		var mask_length = $('#input-mask').val().length;						
+		if (name_length != 0 && name_length != 1 && name_length != 2) {
+			if (mask_length != 0 && mask_length != 1 && mask_length != 2) {
+				var form = $("#form-product");
+				var data = $(form).serialize();
+				$.ajax({
+					url: 'index.php?route=extension/purpletree_multivendor/multivendor/sellerproduct|saveMaterials',
+					type: 'post',
+					dataType: 'json',
+					data: data,
+					beforeSend: function() {
+						$('#button-download-save').button('loading');
+					},
+					complete: function() {
+						$('#button-download-save').button('reset');
+					},
+					success: function (json) {
+						if (json['error']) {
+							//alert(json['error']);													
+							$('#error-filename').append(json['error']['filename']);
+							$('#error-mask').append(json['error']['mask']);
+						}
+						if (json['success']) {
+							alert(json['success']);
+							$('.download_name').val(" ");
+							$('#input-mask').val(" ");
+							$('#input-filename').val(" ");
+							//$('#modal-download-option').modal('hide');
+						}
+					}
+				});
+			}else{
+				alert('Mask must be between 3 and 128 characters!');
+			}
+		}else{
+			alert('Material Name must be between 3 and 64 characters!');
+		}
+	});
 //--></script>
 {{ footer }}

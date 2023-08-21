@@ -28,3 +28,7 @@ function oc_strtolower(string $string) {
 function oc_token(int $length = 32): string {
 	return substr(bin2hex(random_bytes($length)), 0, $length);
 }
+
+function token(int $length = 32): string {
+	return substr(bin2hex(random_bytes($length)), 0, $length);
+}

@@ -3818,6 +3818,38 @@ $store_detail = $this->model_extension_purpletree_multivendor_multivendor_dashbo
 			$this->response->addHeader('Content-Type: application/json');
 			$this->response->setOutput(json_encode($json));
 		}
+		public function saveMaterials(){
+			$this->load->language('extension/purpletree_multivendor/multivendor/downloads');
+			$json = [];
+			
+			foreach ($this->request->post['download_description'] as $language_id => $value) {
+				if ((oc_strlen(trim($value['name'])) < 3) || (oc_strlen($value['name']) > 64)) {
+					$json['error']['name_' . $language_id] = $this->language->get('error_name');
+				}
+			}
+
+			if ((oc_strlen($this->request->post['filename']) < 3) || (oc_strlen($this->request->post['filename']) > 128)) {
+				$json['error']['filename'] = $this->language->get('error_filename');
+			}
+
+			if (!is_file(DIR_DOWNLOAD . $this->request->post['filename'])) {
+				$json['error']['filename'] = $this->language->get('error_exists');
+			}
+
+			if ((oc_strlen($this->request->post['mask']) < 3) || (oc_strlen($this->request->post['mask']) > 128)) {
+				$json['error']['mask'] = $this->language->get('error_mask');
+			}
+
+			if (!$json) {
+				$this->load->model('extension/purpletree_multivendor/multivendor/downloads');
+				$json['download_id'] = $this->model_extension_purpletree_multivendor_multivendor_downloads->addDownload($this->request->post);
+
+				$json['success'] = $this->language->get('text_success');
+			}
+
+			$this->response->addHeader('Content-Type: application/json');
+			$this->response->setOutput(json_encode($json));
+		}
 		
 		//// ***** End  Quick Edit  Product ********/////
 		

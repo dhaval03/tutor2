@@ -114,6 +114,10 @@ $_['entry_tag']          	 = 'Course Tags';
 $_['entry_reward']           = 'Reward Points';
 $_['entry_layout']           = 'Layout Override';
 $_['entry_recurring']        = 'Recurring Profile';
+////////
+$_['entry_name']        = 'Material Name';
+$_['entry_filename']    = 'Filename';
+$_['entry_mask']        = 'Mask';
 //////////
 $_['entry_featured_product']      = 'Featured Course';
 $_['entry_category_featured_product']      = 'Level Featured Course';

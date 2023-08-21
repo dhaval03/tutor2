@@ -610,7 +610,7 @@ class Downloads extends \Opencart\System\Engine\Controller {
 			
 			if (!$json) {
 				if(version_compare(VERSION, '4.0.0.0', '>')){
-					$file = $filename . '.' . Helper\General\oc_token(32);
+					$file = $filename . '.' . oc_token(32);
 				}else{
 					$file = $filename . '.' . token(32);
 				}

@@ -1,6 +1,5 @@
 <?php
 namespace Opencart\Catalog\Model\Extension\PurpletreeMultivendor\Multivendor;
-//namespace Opencart\System\Library\AWS;
 require(DIR_SYSTEM.'library/AWS/S3.php');
 class Downloads extends \Opencart\System\Engine\Model {
 		private $bucketName = 'tutor-flutter';
@@ -111,8 +110,14 @@ class Downloads extends \Opencart\System\Engine\Model {
 			return $query->row['total'];
 		}
 		private function addS3Object($fileName,$file){
-			$s3 = new Opencart\System\Library\AWS\S3();
-			$s3_result = $s3->putObject('vendors/'.$fileName,$this->bucketName,DIR_DOWNLOAD.$file);
+			$ext = pathinfo($fileName, PATHINFO_EXTENSION);
+			if($ext == 'pdf'){
+				$folder = 'vendors/'.$this->customer->getId().'/pdf/';
+			}else{
+				$folder = 'vendors/'.$this->customer->getId().'/videos/';
+			}
+			$s3 = new \Opencart\System\Library\AWS\S3($this->config,"us-east-1");
+			$s3_result = $s3->putObject($folder.$fileName,$this->bucketName,DIR_DOWNLOAD.$file);
 			return $s3_result;
 		}
 }
