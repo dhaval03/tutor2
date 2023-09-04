@@ -34,3 +34,217 @@ Line: 227
 File: C:\wamp\www\tutor\system\engine\proxy.php
 Line: 83
 
+2023-08-16 04:59:45 - PHP Warning:  rename(C:\wamp64\www\amar123\tutor2\system\storage\cache\template\42\4201BF4.tmp,C:\wamp64\www\amar123\tutor2/system/storage/cache/template/42/420c7e0bc6f3812abbb00c8ea4cf1738.php): Access is denied (code: 5) in C:\wamp64\www\amar123\tutor2\system\storage\vendor\twig\twig\src\Cache\FilesystemCache.php on line 61
+2023-08-16 04:59:45 - RuntimeException:  Failed to write cache file "C:\wamp64\www\amar123\tutor2/system/storage/cache/template/42/420c7e0bc6f3812abbb00c8ea4cf1738.php". in C:\wamp64\www\amar123\tutor2\system\storage\vendor\twig\twig\src\Cache\FilesystemCache.php on line 76
+2023-08-16 04:59:45 - PHP Warning:  rename(C:\wamp64\www\amar123\tutor2\system\storage\cache\template\42\4201BF3.tmp,C:\wamp64\www\amar123\tutor2/system/storage/cache/template/42/420c7e0bc6f3812abbb00c8ea4cf1738.php): Access is denied (code: 5) in C:\wamp64\www\amar123\tutor2\system\storage\vendor\twig\twig\src\Cache\FilesystemCache.php on line 61
+2023-08-16 04:59:45 - RuntimeException:  Failed to write cache file "C:\wamp64\www\amar123\tutor2/system/storage/cache/template/42/420c7e0bc6f3812abbb00c8ea4cf1738.php". in C:\wamp64\www\amar123\tutor2\system\storage\vendor\twig\twig\src\Cache\FilesystemCache.php on line 76
+2023-08-16 11:29:51 - PHP Warning:  Undefined array key "filename" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\downloads.php on line 553
+2023-08-16 11:29:51 - PHP Warning:  Trying to access array offset on value of type null in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\downloads.php on line 553
+2023-08-16 11:38:54 - Error:  Call to undefined function Opencart\System\Helper\General\token() in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\downloads.php on line 610
+2023-08-16 11:41:21 - Error:  Call to undefined function Opencart\System\Helper\General\token() in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\downloads.php on line 611
+2023-08-16 11:43:20 - Error:  Call to undefined function Opencart\System\Helper\General\oc_token() in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\downloads.php on line 611
+2023-08-16 11:43:58 - Error:  Call to undefined function Opencart\System\Helper\General\token() in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\downloads.php on line 611
+2023-08-16 12:09:09 - Error:  Call to undefined function Opencart\Admin\Controller\Common\oc_token()
+File: C:\wamp64\www\amar123\tutor2\admin2023\controller\common\login.php
+Line: 34
+
+2023-08-16 12:32:34 - Error:  Call to undefined function Opencart\System\Helper\General\token() in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\downloads.php on line 613
+2023-08-16 12:34:46 - Error:  Call to undefined function Opencart\Catalog\Controller\Extension\PurpletreeMultivendor\Multivendor\Helper\General\token() in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\downloads.php on line 613
+2023-08-16 12:35:07 - Error:  Call to undefined function Opencart\Catalog\Controller\Extension\PurpletreeMultivendor\Multivendor\Helper\General\token() in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\downloads.php on line 613
+2023-08-16 12:43:47 - ParseError:  syntax error, unexpected token "-", expecting "{" in C:\wamp64\www\amar123\tutor2\system\library\AWS-S3\S3.php on line 2
+2023-08-16 13:05:39 - Exception:  Error: Could not load model Opencart\Catalog\Model\Extension\PurpletreeMultivendor\Multivendor\Downloads! in C:\wamp64\www\amar123\tutor2\system\engine\loader.php on line 176
+2023-08-16 13:05:48 - Exception:  Error: Could not load model Opencart\Catalog\Model\Extension\PurpletreeMultivendor\Multivendor\Downloads! in C:\wamp64\www\amar123\tutor2\system\engine\loader.php on line 176
+2023-08-16 13:06:51 - Exception:  Error: Could not load model Opencart\Catalog\Model\Extension\PurpletreeMultivendor\Multivendor\Downloads! in C:\wamp64\www\amar123\tutor2\system\engine\loader.php on line 176
+2023-08-17 04:55:59 - Error:  Call to undefined function Opencart\Admin\Controller\Common\oc_token()
+File: C:\wamp64\www\amar123\tutor2\admin2023\controller\common\login.php
+Line: 34
+
+2023-08-17 04:57:44 - Error:  Call to undefined function Opencart\Admin\Controller\Common\oc_token()
+File: C:\wamp64\www\amar123\tutor2\admin2023\controller\common\login.php
+Line: 34
+
+2023-08-17 04:58:18 - Error:  Call to undefined function Opencart\Admin\Controller\Common\oc_token()
+File: C:\wamp64\www\amar123\tutor2\admin2023\controller\common\login.php
+Line: 34
+
+2023-08-17 04:58:46 - Error:  Call to undefined function Opencart\Admin\Controller\Common\oc_token()
+File: C:\wamp64\www\amar123\tutor2\admin2023\controller\common\login.php
+Line: 34
+
+2023-08-17 05:00:18 - Error:  Call to undefined function Opencart\Admin\Controller\Common\token()
+File: C:\wamp64\www\amar123\tutor2\admin2023\controller\common\login.php
+Line: 34
+
+2023-08-17 05:20:21 - Error:  Class "Opencart\Catalog\Model\Extension\PurpletreeMultivendor\Multivendor\Opencart\System\Library\AWS\S3" not found in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\model\multivendor\downloads.php on line 114
+2023-08-17 05:23:52 - Error:  Class "Opencart\Catalog\Model\Extension\PurpletreeMultivendor\Multivendor\Opencart\System\Library\AWS\S3" not found in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\model\multivendor\downloads.php on line 114
+2023-08-17 05:24:57 - Error:  Class "Opencart\Catalog\Model\Extension\PurpletreeMultivendor\Multivendor\Opencart\System\Library\AWS\S3" not found in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\model\multivendor\downloads.php on line 114
+2023-08-17 05:25:35 - ArgumentCountError:  Too few arguments to function Opencart\System\Library\AWS\S3::__construct(), 0 passed in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\model\multivendor\downloads.php on line 114 and exactly 2 expected in C:\wamp64\www\amar123\tutor2\system\library\AWS\S3.php on line 9
+2023-08-17 05:26:45 - Error:  Class "Opencart\System\Library\AWS\Aws\S3\S3Client" not found in C:\wamp64\www\amar123\tutor2\system\library\AWS\S3.php on line 14
+2023-08-17 05:27:39 - Aws\S3\Exception\S3Exception:  Error executing "PutObject" on "https://tutor-flutter.s3.amazonaws.com/vendors/1/sample_640x360.mov"; AWS HTTP error: Client error: `PUT https://tutor-flutter.s3.amazonaws.com/vendors/1/sample_640x360.mov` resulted in a `400 Bad Request` response:
+<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>AuthorizationHeaderMalformed</Code><Message>The authorization header (truncated...)
+ AuthorizationHeaderMalformed (client): The authorization header is malformed; a non-empty Access Key (AKID) must be provided in the credential. - <?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>AuthorizationHeaderMalformed</Code><Message>The authorization header is malformed; a non-empty Access Key (AKID) must be provided in the credential.</Message><RequestId>QX4467D940A3EE3P</RequestId><HostId>9rONqDTjSZc3oOd0mQR8sfakJMQfniBwwTOc2mCenCMru9dXKzb3hOaLfD/Mab3neowhoFxwt0M=</HostId></Error> in C:\wamp64\www\amar123\tutor2\system\storage\vendor\aws\aws-sdk-php\src\WrappedHttpHandler.php on line 195
+2023-08-17 05:28:38 - Error:  Call to undefined function Opencart\Admin\Controller\Common\oc_token()
+File: C:\wamp64\www\amar123\tutor2\admin2023\controller\common\login.php
+Line: 34
+
+2023-08-17 05:29:47 - Error:  Call to undefined function Opencart\Admin\Controller\Common\token()
+File: C:\wamp64\www\amar123\tutor2\admin2023\controller\common\login.php
+Line: 34
+
+2023-08-17 05:30:44 - Error:  Call to undefined function Opencart\Admin\Controller\Common\Helper\General\oc_token()
+File: C:\wamp64\www\amar123\tutor2\admin2023\controller\common\login.php
+Line: 34
+
+2023-08-17 05:30:57 - Error:  Call to undefined function Helper\General\oc_token()
+File: C:\wamp64\www\amar123\tutor2\admin2023\controller\common\login.php
+Line: 34
+
+2023-08-17 05:31:11 - Error:  Call to undefined function Helper\General\token()
+File: C:\wamp64\www\amar123\tutor2\admin2023\controller\common\login.php
+Line: 34
+
+2023-08-17 05:32:03 - Error:  Call to undefined function Opencart\Admin\Controller\Common\Helper\General\token()
+File: C:\wamp64\www\amar123\tutor2\admin2023\controller\common\login.php
+Line: 34
+
+2023-08-17 05:35:00 - Error:  Call to undefined function Opencart\Admin\Controller\Common\oc_token()
+File: C:\wamp64\www\amar123\tutor2\admin2023\controller\common\login.php
+Line: 34
+
+2023-08-17 05:35:55 - Error:  Call to undefined function Opencart\Admin\Controller\Common\oc_token()
+File: C:\wamp64\www\amar123\tutor2\admin2023\controller\common\login.php
+Line: 34
+
+2023-08-17 06:41:14 - Error:  Call to undefined function Opencart\System\Helper\General\oc_token() in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\downloads.php on line 613
+2023-08-17 06:41:38 - Error:  Call to undefined function Opencart\System\Helper\General\oc_token() in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\downloads.php on line 613
+2023-08-17 06:42:36 - Exception:  Error: Unknown column 'url' in 'field list'<br/>Error No: 1054<br/>INSERT INTO download SET url = 'https://tutor-flutter.s3.amazonaws.com/vendors/1/sample-mp4-file-small.mp4', filename = 'sample-mp4-file-small.mp4.334f0ee650c9664c2d54969b7b91d393', mask = 'sample-mp4-file-small.mp4', date_added = NOW() in C:\wamp64\www\amar123\tutor2\system\library\db\mysqli.php on line 68
+2023-08-17 06:47:21 - Error:  Call to undefined function Opencart\System\Helper\General\oc_token() in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\downloads.php on line 613
+2023-08-17 06:48:11 - Error:  Call to undefined function Opencart\System\Helper\General\oc_token() in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\downloads.php on line 613
+2023-08-17 08:04:04 - PHP Warning:  Undefined variable $filename in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\model\multivendor\downloads.php on line 113
+2023-08-17 08:04:04 - PHP Unknown:  pathinfo(): Passing null to parameter #1 ($path) of type string is deprecated in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\model\multivendor\downloads.php on line 113
+2023-08-17 08:04:28 - PHP Warning:  Undefined variable $filename in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\model\multivendor\downloads.php on line 114
+2023-08-17 08:04:28 - PHP Unknown:  pathinfo(): Passing null to parameter #1 ($path) of type string is deprecated in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\model\multivendor\downloads.php on line 114
+2023-08-17 08:05:50 - PHP Warning:  Undefined variable $filename in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\model\multivendor\downloads.php on line 113
+2023-08-17 08:05:50 - PHP Unknown:  explode(): Passing null to parameter #2 ($string) of type string is deprecated in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\model\multivendor\downloads.php on line 113
+2023-08-17 08:05:50 - PHP Notice:  Only variables should be passed by reference in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\model\multivendor\downloads.php on line 113
+2023-08-17 08:05:50 - PHP Warning:  Undefined variable $filename in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\model\multivendor\downloads.php on line 116
+2023-08-17 08:05:50 - PHP Unknown:  pathinfo(): Passing null to parameter #1 ($path) of type string is deprecated in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\model\multivendor\downloads.php on line 116
+2023-08-17 09:52:27 - Twig\Error\SyntaxError:  Unexpected token "end of print statement" of value "". in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\view\template\multivendor\product_form.twig on line 706
+2023-08-17 10:00:40 - PHP Warning:  Undefined array key "name" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-17 10:00:40 - PHP Unknown:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-17 10:00:40 - PHP Warning:  Undefined array key "name" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-17 10:00:40 - PHP Unknown:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-17 10:00:40 - PHP Warning:  Undefined array key "name" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-17 10:00:40 - PHP Unknown:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-17 10:00:40 - PHP Warning:  Undefined array key "name" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-17 10:00:40 - PHP Unknown:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-17 10:00:46 - PHP Warning:  Undefined array key "name" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-17 10:00:46 - PHP Unknown:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-17 10:00:46 - PHP Warning:  Undefined array key "name" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-17 10:00:46 - PHP Unknown:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-17 10:00:46 - PHP Warning:  Undefined array key "name" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-17 10:00:46 - PHP Unknown:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-17 10:00:46 - PHP Warning:  Undefined array key "name" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-17 10:00:46 - PHP Unknown:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-18 12:09:44 - PHP Warning:  Undefined array key "download_description" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3825
+2023-08-18 12:09:44 - PHP Warning:  foreach() argument must be of type array|object, null given in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3825
+2023-08-18 12:09:44 - PHP Warning:  Undefined array key "filename" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3831
+2023-08-18 12:09:44 - TypeError:  oc_strlen(): Argument #1 ($string) must be of type string, null given, called in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3831 in C:\wamp64\www\amar123\tutor2\system\helper\general.php on line 3
+2023-08-18 12:10:20 - PHP Warning:  Undefined array key "filename" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3825
+2023-08-18 12:10:20 - TypeError:  oc_strlen(): Argument #1 ($string) must be of type string, null given, called in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3825 in C:\wamp64\www\amar123\tutor2\system\helper\general.php on line 3
+2023-08-18 12:32:11 - PHP Warning:  Undefined array key "download_description" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3825
+2023-08-18 12:32:11 - PHP Warning:  foreach() argument must be of type array|object, null given in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3825
+2023-08-18 12:32:11 - PHP Warning:  Undefined array key "filename" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3831
+2023-08-18 12:32:11 - TypeError:  oc_strlen(): Argument #1 ($string) must be of type string, null given, called in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3831 in C:\wamp64\www\amar123\tutor2\system\helper\general.php on line 3
+2023-08-18 12:32:14 - PHP Warning:  Undefined array key "download_description" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3825
+2023-08-18 12:32:14 - PHP Warning:  foreach() argument must be of type array|object, null given in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3825
+2023-08-18 12:32:14 - PHP Warning:  Undefined array key "filename" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3831
+2023-08-18 12:32:14 - TypeError:  oc_strlen(): Argument #1 ($string) must be of type string, null given, called in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3831 in C:\wamp64\www\amar123\tutor2\system\helper\general.php on line 3
+2023-08-18 13:07:41 - PHP Warning:  Undefined array key "name" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-18 13:07:41 - PHP Unknown:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-18 13:07:41 - PHP Warning:  Undefined array key "name" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-18 13:07:41 - PHP Unknown:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-18 13:07:41 - PHP Warning:  Undefined array key "name" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-18 13:07:41 - PHP Unknown:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-18 13:07:41 - PHP Warning:  Undefined array key "name" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-18 13:07:41 - PHP Unknown:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 2347
+2023-08-18 13:21:06 - PHP Warning:  Undefined array key "download_description" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3824
+2023-08-18 13:21:06 - PHP Warning:  foreach() argument must be of type array|object, null given in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3824
+2023-08-18 13:21:06 - PHP Warning:  Undefined array key "filename" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3830
+2023-08-18 13:21:06 - TypeError:  oc_strlen(): Argument #1 ($string) must be of type string, null given, called in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3830 in C:\wamp64\www\amar123\tutor2\system\helper\general.php on line 3
+2023-08-18 13:21:37 - PHP Warning:  Undefined array key "download_description" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3824
+2023-08-18 13:21:37 - PHP Warning:  foreach() argument must be of type array|object, null given in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3824
+2023-08-18 13:21:37 - PHP Warning:  Undefined array key "filename" in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3830
+2023-08-18 13:21:37 - TypeError:  oc_strlen(): Argument #1 ($string) must be of type string, null given, called in C:\wamp64\www\amar123\tutor2\extension\purpletree_multivendor\catalog\controller\multivendor\sellerproduct.php on line 3830 in C:\wamp64\www\amar123\tutor2\system\helper\general.php on line 3
+2023-08-21 07:01:17 - ArgumentCountError:  Too few arguments to function Opencart\Catalog\Model\Account\Address::getAddress(), 1 passed and exactly 2 expected in C:\wamp64\www\amar123\tutor2\catalog\model\account\address.php on line 28
+2023-08-21 07:01:20 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-21 07:01:21 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-21 07:01:21 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-21 07:01:22 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-21 07:01:22 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-21 07:01:22 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-21 07:01:23 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-21 07:01:23 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-21 07:01:53 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-21 07:01:54 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-21 07:01:54 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-21 07:01:54 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-21 07:01:56 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 67
+2023-08-21 07:01:56 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 68
+2023-08-21 07:01:56 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 69
+2023-08-21 07:01:56 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 70
+2023-08-22 13:29:39 - ArgumentCountError:  Too few arguments to function Opencart\Catalog\Model\Account\Address::getAddress(), 1 passed and exactly 2 expected in C:\wamp64\www\amar123\tutor2\catalog\model\account\address.php on line 28
+2023-08-22 13:29:44 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-22 13:29:44 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-22 13:29:45 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-22 13:29:45 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-22 13:29:45 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-22 13:29:45 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-22 13:29:45 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-22 13:29:46 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-22 13:29:46 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-22 13:29:49 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 67
+2023-08-22 13:29:49 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 68
+2023-08-22 13:29:49 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 69
+2023-08-22 13:29:49 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 70
+2023-08-22 13:29:59 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 67
+2023-08-22 13:29:59 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 68
+2023-08-22 13:29:59 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 69
+2023-08-22 13:29:59 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 70
+2023-08-22 13:30:03 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\account\register.php on line 6
+2023-08-22 13:30:03 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 67
+2023-08-22 13:30:03 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 68
+2023-08-22 13:30:03 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 69
+2023-08-22 13:30:03 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 70
+2023-08-25 06:39:11 - PHP Warning: Undefined variable $za
+File: C:\wamp64\www\amar123\tutor2\admin2023\controller\marketplace\installer.php
+Line: 228
+
+2023-08-25 06:39:11 - PHP Warning: Attempt to read property "numFiles" on null
+File: C:\wamp64\www\amar123\tutor2\admin2023\controller\marketplace\installer.php
+Line: 228
+
+2023-08-31 09:00:19 - ArgumentCountError:  Too few arguments to function Opencart\Catalog\Model\Account\Address::getAddress(), 1 passed and exactly 2 expected in C:\wamp64\www\amar123\tutor2\catalog\model\account\address.php on line 28
+2023-08-31 09:00:22 - Exception:  Error: Could not call registry key model_extension_purpletree_multivendor_multivendor_vendor! in C:\wamp64\www\amar123\tutor2\system\engine\controller.php on line 37
+2023-08-31 09:00:24 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 67
+2023-08-31 09:00:24 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 68
+2023-08-31 09:00:24 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 69
+2023-08-31 09:00:24 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 70
+2023-08-31 09:00:27 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 67
+2023-08-31 09:00:27 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 68
+2023-08-31 09:00:27 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 69
+2023-08-31 09:00:27 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 70
+2023-08-31 09:00:32 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 67
+2023-08-31 09:00:32 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 68
+2023-08-31 09:00:32 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 69
+2023-08-31 09:00:32 - PHP Warning:  Undefined array key "customer_token" in C:\wamp64\www\amar123\tutor2\catalog\controller\common\header.php on line 70
+2023-08-31 13:13:51 - PHP Warning: rename(C:\wamp64\www\amar123\tutor2\system\storage\cache\template\21\21aBE3F.tmp,C:\wamp64\www\amar123\tutor2/system/storage/cache/template/21/21aa6d3d3e7b7c6bb85f5ec365af1c52.php): Access is denied (code: 5)
+File: C:\wamp64\www\amar123\tutor2\system\storage\vendor\twig\twig\src\Cache\FilesystemCache.php
+Line: 61
+
+2023-08-31 13:13:51 - RuntimeException:  Failed to write cache file "C:\wamp64\www\amar123\tutor2/system/storage/cache/template/21/21aa6d3d3e7b7c6bb85f5ec365af1c52.php".
+File: C:\wamp64\www\amar123\tutor2\system\storage\vendor\twig\twig\src\Cache\FilesystemCache.php
+Line: 76
+

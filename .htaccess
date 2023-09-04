@@ -47,170 +47,242 @@ Options -Indexes
 ## SEO URL Settings
 RewriteEngine On
 ## If your opencart installation does not run on the main web folder make sure you folder it does run in ie. / becomes /shop/
-RewriteBase /
+RewriteBase /amar123/tutor2/
 ## Rewrite Rules
+
 RewriteRule ^system/storage/(.*) index.php?route=error/not_found [L]
 # Sets the HTTP_AUTHORIZATION header removed by apache
 RewriteCond %{HTTP:Authorization} .
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 #REST API get token
-RewriteRule ^api/rest/oauth2/token/?([a-zA-Z0-9_]+) index.php?route=feed/rest_api/gettoken&grant_type=$1  [L]
+RewriteRule ^api/rest/oauth2/token/?([a-zA-Z0-9_]+) index.php?route=extension/restapi/feed/restapi|getToken&grant_type=$1  [L]
 #REST API get token
-RewriteRule ^api/rest/oauth2/token index.php?route=feed/rest_api/gettoken  [L]
+RewriteRule ^api/rest/oauth2/token index.php?route=extension/restapi/feed/restapi|getToken  [L]
 #REST API database tables checksum
-RewriteRule ^api/rest/checksums index.php?route=feed/rest_api/getchecksum  [L]
-RewriteRule ^api/rest/affiliate index.php?route=feed/rest_api/affiliate  [L]
+RewriteRule ^api/rest/checksums index.php?route=extension/restapi/feed/restapi|getchecksum  [L]
+RewriteRule ^api/rest/affiliate index.php?route=extension/restapi/feed/restapi|affiliate  [L]
+
+####################################### TUTOR RULES #################################################
+
+#REST API selected course
+RewriteRule ^api/rest/course/vendor/?([0-9]+) index.php?route=extension/restapi/rest/vendor/course|course&id=$1  [L]
+#REST API course
+RewriteRule ^api/rest/course/vendor index.php?route=extension/restapi/rest/vendor/course|course  [L,QSA]
+
+#REST API course
+RewriteRule ^api/rest/course index.php?route=extension/restapi/rest/course|course  [L,QSA]
+
+#REST API registerCustomer
+RewriteRule ^api/rest/registerCustomer index.php?route=extension/restapi/rest/register|registerCustomer  [L,QSA]
+
+#REST API loginvendor
+RewriteRule ^api/rest/loginvendor index.php?route=extension/restapi/rest/vendor/loginvendor|loginvendor  [L,QSA]
+
+#REST API selected tutor
+RewriteRule ^api/rest/tutor/?([0-9]+) index.php?route=extension/restapi/rest/vendor/tutor|tutor&id=$1  [L]
+#REST API tutor
+RewriteRule ^api/rest/tutor index.php?route=extension/restapi/rest/vendor/tutor|tutor  [L,QSA]
+
+
+
+
+
 ####################################### OPENCART UTC OFFSET #################################################
 #REST API UTC and server time offset in seconds
-RewriteRule ^api/rest/utc_offset index.php?route=feed/rest_api/utc_offset  [L]
+RewriteRule ^api/rest/utc_offset index.php?route=extension/restapi/feed/restapi|utc_offset  [L]
 #######################################VOUCHER THEMES#####################################################
 #REST API voucher themes
-RewriteRule ^api/rest/account/voucherthemes index.php?route=rest/account/voucherthemes  [L]
+RewriteRule ^api/rest/account/voucherthemes index.php?route=rest/account|voucherthemes  [L]
 #######################################VOUCHERS#####################################################
 #REST API vouchers
-RewriteRule ^api/rest/account/voucher index.php?route=rest/account/voucher  [L]
+RewriteRule ^api/rest/account/voucher index.php?route=rest/account|voucher  [L]
 #######################################TRANSACTIONS#####################################################
 #REST API transactions
-RewriteRule ^api/rest/account/transactions index.php?route=rest/account/transactions  [L]
+RewriteRule ^api/rest/account/transactions index.php?route=rest/account|transactions  [L]
 ####################################### OPENCART ORDER STATUSES #################################################
 #REST API List order statuses
-RewriteRule ^api/rest/order_statuses index.php?route=feed/rest_api/order_statuses  [L]
+RewriteRule ^api/rest/order_statuses index.php?route=extension/restapi/feed/restapi|order_statuses  [L]
 #######################################PRODUCT######################################################################
 #REST API product custom search pager
-RewriteRule ^api/rest/products/custom_search/limit/?([0-9]+)/page/?([0-9]+) index.php?route=feed/rest_api/search&limit=$1&page=$2 [L]
+RewriteRule ^api/rest/products/custom_search/limit/?([0-9]+)/page/?([0-9]+) index.php?route=extension/restapi/feed/restapi|search&limit=$1&page=$2 [L]
+
 #REST API product custom search
-RewriteRule ^api/rest/products/custom_search index.php?route=feed/rest_api/search[L]
-RewriteRule ^api/rest/products/search/?([-a-zA-Z0-9_&\|\s/.]+)/sort/?([a-zA-Z]+)/order/?([a-zA-Z]+) index.php?route=feed/rest_api/products&search=$1&sort=$2&order=$3 [B,NC,L]
-RewriteRule ^api/rest/products/search/?([-a-zA-Z0-9_&\|\s/.]+)/sort/?([a-zA-Z]+) index.php?route=feed/rest_api/products&search=$1&sort=$2 [B,NC,L]
-RewriteRule ^api/rest/products/category/?([0-9]+)/sort/?([a-zA-Z]+)/order/?([a-zA-Z]+) index.php?route=feed/rest_api/products&category=$1&sort=$2&order=$3  [L]
-RewriteRule ^api/rest/products/category/?([0-9]+)/sort/?([a-zA-Z]+) index.php?route=feed/rest_api/products&category=$1&sort=$2  [L]
-RewriteRule ^api/rest/products/sort/?([a-zA-Z]+)/order/?([a-zA-Z]+) index.php?route=feed/rest_api/products&sort=$1&order=$2  [L]
-RewriteRule ^api/rest/products/sort/?([a-zA-Z]+) index.php?route=feed/rest_api/products&sort=$1  [L]
+RewriteRule ^api/rest/products/custom_search index.php?route=extension/restapi/feed/restapi|search[L]
+RewriteRule ^api/rest/products/search/?([-a-zA-Z0-9_&\|\s/.]+)/sort/?([a-zA-Z]+)/order/?([a-zA-Z]+) index.php?route=extension/restapi/feed/restapi|products&search=$1&sort=$2&order=$3 [B,NC,L]
+RewriteRule ^api/rest/products/search/?([-a-zA-Z0-9_&\|\s/.]+)/sort/?([a-zA-Z]+) index.php?route=extension/restapi/feed/restapi|products&search=$1&sort=$2 [B,NC,L]
+
+RewriteRule ^api/rest/products/category/?([0-9]+)/sort/?([a-zA-Z]+)/order/?([a-zA-Z]+) index.php?route=extension/restapi/feed/restapi|products&category=$1&sort=$2&order=$3  [L]
+RewriteRule ^api/rest/products/category/?([0-9]+)/sort/?([a-zA-Z]+) index.php?route=extension/restapi/feed/restapi|products&category=$1&sort=$2  [L]
+
+RewriteRule ^api/rest/products/sort/?([a-zA-Z]+)/order/?([a-zA-Z]+) index.php?route=extension/restapi/feed/restapi|products&sort=$1&order=$2  [L]
+RewriteRule ^api/rest/products/sort/?([a-zA-Z]+) index.php?route=extension/restapi/feed/restapi|products&sort=$1  [L]
+
 #REST API products filter by slug
-RewriteRule ^api/rest/products/slug/?([-a-zA-Z0-9_&\|\s/.]+) index.php?route=feed/rest_api/products&slug=$1 [B,NC,L]
+RewriteRule ^api/rest/products/slug/?([-a-zA-Z0-9_&\|\s/.]+) index.php?route=extension/restapi/feed/restapi|products&slug=$1 [B,NC,L]
+
 #REST API add review
-RewriteRule ^api/rest/products/?([0-9]+)/review index.php?route=feed/rest_api/reviews&id=$1  [L]
+RewriteRule ^api/rest/products/?([0-9]+)/review index.php?route=extension/restapi/feed/restapi|reviews&id=$1  [L]
+
 #REST API product search pager
-RewriteRule ^api/rest/products/search/?([-a-zA-Z0-9_&\|\s/.]+)/limit/?([0-9]+)/page/?([0-9]+) index.php?route=feed/rest_api/products&search=$1&limit=$2&page=$3 [B,NC,L]
+RewriteRule ^api/rest/products/search/?([-a-zA-Z0-9_&\|\s/.]+)/limit/?([0-9]+)/page/?([0-9]+) index.php?route=extension/restapi/feed/restapi|products&search=$1&limit=$2&page=$3 [B,NC,L]
+
 #REST API product search
-RewriteRule ^api/rest/products/search/?([-a-zA-Z0-9_&\|\s/.]+) index.php?route=feed/rest_api/products&search=$1 [B,NC,L]
+RewriteRule ^api/rest/products/search/?([-a-zA-Z0-9_&\|\s/.]+) index.php?route=extension/restapi/feed/restapi|products&search=$1 [B,NC,L]
+
 #REST API product pager
-RewriteRule ^api/rest/products/limit/?([0-9]+)/page/?([0-9]+) index.php?route=feed/rest_api/products&limit=$1&page=$2  [L]
+RewriteRule ^api/rest/products/limit/?([0-9]+)/page/?([0-9]+) index.php?route=extension/restapi/feed/restapi|products&limit=$1&page=$2  [L]
+
 #REST API product per category pager
-RewriteRule ^api/rest/products/category/?([0-9]+)/limit/?([0-9]+)/page/?([0-9]+) index.php?route=feed/rest_api/products&category=$1&limit=$2&page=$3  [L]
+RewriteRule ^api/rest/products/category/?([0-9]+)/limit/?([0-9]+)/page/?([0-9]+) index.php?route=extension/restapi/feed/restapi|products&category=$1&limit=$2&page=$3  [L]
+
 #REST API products by category filters
-RewriteRule ^api/rest/products/category/?([0-9]+)/filters/([0-9,?:,]+) index.php?route=feed/rest_api/products&category=$1&filters=$2  [L]
+RewriteRule ^api/rest/products/category/?([0-9]+)/filters/([0-9,?:,]+) index.php?route=extension/restapi/feed/restapi|products&category=$1&filters=$2  [L]
+
 #REST API products per category
-RewriteRule ^api/rest/products/category/?([0-9]+) index.php?route=feed/rest_api/products&category=$1  [L]
+RewriteRule ^api/rest/products/category/?([0-9]+) index.php?route=extension/restapi/feed/restapi|products&category=$1  [L]
+
 #REST API selected product
-RewriteRule ^api/rest/products/?([0-9]+) index.php?route=feed/rest_api/products&id=$1  [L]
+RewriteRule ^api/rest/products/?([0-9]+) index.php?route=extension/restapi/feed/restapi|products&id=$1  [L]
+
 #REST API custom fields
-RewriteRule ^api/rest/products/simple/customfields/?([a-zA-Z0-9,\s]+) index.php?route=feed/rest_api/products&simple=1&custom_fields=$1  [L]
+RewriteRule ^api/rest/products/simple/customfields/?([a-zA-Z0-9,\s]+) index.php?route=extension/restapi/feed/restapi|products&simple=1&custom_fields=$1  [L]
+
 #REST API simple products
-RewriteRule ^api/rest/products/simple index.php?route=feed/rest_api/products&simple=1  [L]
+RewriteRule ^api/rest/products/simple index.php?route=extension/restapi/feed/restapi|products&simple=1  [L]
+
 #REST API product per manufacturer pager
-RewriteRule ^api/rest/products/manufacturer/?([0-9]+)/limit/?([0-9]+)/page/?([0-9]+) index.php?route=feed/rest_api/products&manufacturer=$1&limit=$2&page=$3  [L]
+RewriteRule ^api/rest/products/manufacturer/?([0-9]+)/limit/?([0-9]+)/page/?([0-9]+) index.php?route=extension/restapi/feed/restapi|products&manufacturer=$1&limit=$2&page=$3  [L]
+
 #REST API products per manufacturer
-RewriteRule ^api/rest/products/manufacturer/?([0-9]+) index.php?route=feed/rest_api/products&manufacturer=$1  [L]
+RewriteRule ^api/rest/products/manufacturer/?([0-9]+) index.php?route=extension/restapi/feed/restapi|products&manufacturer=$1  [L]
+
 #REST API products
-RewriteRule ^api/rest/products index.php?route=feed/rest_api/products  [L]
+RewriteRule ^api/rest/products index.php?route=extension/restapi/feed/restapi|products  [L]
+
 #REST API get featured products limit
-RewriteRule ^api/rest/featured/limit/?([0-9]+) index.php?route=feed/rest_api/featured&limit=$1  [L]
+RewriteRule ^api/rest/featured/limit/?([0-9]+) index.php?route=extension/restapi/feed/restapi|featured&limit=$1  [L]
+
 #REST API get featured products
-RewriteRule ^api/rest/featured index.php?route=feed/rest_api/featured  [L]
+RewriteRule ^api/rest/featured index.php?route=extension/restapi/feed/restapi|featured  [L]
+
 #REST API get product classes
-RewriteRule ^api/rest/product_classes index.php?route=feed/rest_api/productclasses  [L]
+RewriteRule ^api/rest/product_classes index.php?route=extension/restapi/feed/restapi|productclasses  [L]
+
 #REST API bestsellers
-RewriteRule ^api/rest/bestsellers/limit/?([0-9]+) index.php?route=feed/rest_api/bestsellers&limit=$1  [L]
+RewriteRule ^api/rest/bestsellers/limit/?([0-9]+) index.php?route=extension/restapi/feed/restapi|bestsellers&limit=$1  [L]
+
 #REST API bestsellers
-RewriteRule ^api/rest/bestsellers index.php?route=feed/rest_api/bestsellers  [L]
+RewriteRule ^api/rest/bestsellers index.php?route=extension/restapi/feed/restapi|bestsellers  [L]
+
 #REST API filters
-RewriteRule ^api/rest/filters/id/?([0-9]+) index.php?route=feed/rest_api/filters&id=$1  [L]
+RewriteRule ^api/rest/filters/id/?([0-9]+) index.php?route=extension/restapi/feed/restapi|filters&id=$1  [L]
 #REST API related
-RewriteRule ^api/rest/related/?([0-9]+) index.php?route=feed/rest_api/related&id=$1  [L]
+RewriteRule ^api/rest/related/?([0-9]+) index.php?route=extension/restapi/feed/restapi|related&id=$1  [L]
+
 #REST API latest
-RewriteRule ^api/rest/latest/limit/?([0-9]+) index.php?route=feed/rest_api/latest&limit=$1  [L]
-RewriteRule ^api/rest/latest index.php?route=feed/rest_api/latest  [L]
+RewriteRule ^api/rest/latest/limit/?([0-9]+) index.php?route=extension/restapi/feed/restapi|latest&limit=$1  [L]
+RewriteRule ^api/rest/latest index.php?route=extension/restapi/feed/restapi|latest  [L]
+
 #REST API banners
-RewriteRule ^api/rest/banners/?([0-9]+) index.php?route=feed/rest_api/banners&id=$1  [L]
-RewriteRule ^api/rest/banners index.php?route=feed/rest_api/banners  [L]
+RewriteRule ^api/rest/banners/?([0-9]+) index.php?route=extension/restapi/feed/restapi|banners&id=$1  [L]
+RewriteRule ^api/rest/banners index.php?route=extension/restapi/feed/restapi|banners  [L]
+
 #REST API specials
-RewriteRule ^api/rest/specials/limit/?([0-9]+) index.php?route=feed/rest_api/specials&limit=$1  [L]
-RewriteRule ^api/rest/specials index.php?route=feed/rest_api/specials  [L]
+RewriteRule ^api/rest/specials/limit/?([0-9]+) index.php?route=extension/restapi/feed/restapi|specials&limit=$1  [L]
+RewriteRule ^api/rest/specials index.php?route=extension/restapi/feed/restapi|specials  [L]
+
 #REST API compare products
-RewriteRule ^api/rest/compare/([0-9,?:,]+) index.php?route=feed/rest_api/compare&ids=$1  [L]
+RewriteRule ^api/rest/compare/([0-9,?:,]+) index.php?route=extension/restapi/feed/restapi|compare&ids=$1  [L]
 #######################################SLIDESHOW####################################################################
 #REST API get slideshows
-RewriteRule ^api/rest/slideshows index.php?route=feed/rest_api/slideshows  [L]
+RewriteRule ^api/rest/slideshows index.php?route=extension/restapi/feed/restapi|slideshows  [L]
 #######################################CATEGORY####################################################################
 #REST API categories filter by slug
-RewriteRule ^api/rest/categories/slug/?([-a-zA-Z0-9_&\|\s/.]+) index.php?route=feed/rest_api/categories&slug=$1 [B,NC,L]
+RewriteRule ^api/rest/categories/slug/?([-a-zA-Z0-9_&\|\s/.]+) index.php?route=extension/restapi/feed/restapi|categories&slug=$1 [B,NC,L]
+
 #REST API categories filter parent and level
-RewriteRule ^api/rest/categories/parent/?([0-9]+)/level/?([0-9]+) index.php?route=feed/rest_api/categories&parent=$1&level=$2  [L]
+RewriteRule ^api/rest/categories/parent/?([0-9]+)/level/?([0-9]+) index.php?route=extension/restapi/feed/restapi|categories&parent=$1&level=$2  [L]
+
 #REST API categories filter level
-RewriteRule ^api/rest/categories/level/?([0-9]+) index.php?route=feed/rest_api/categories&level=$1  [L]
+RewriteRule ^api/rest/categories/level/?([0-9]+) index.php?route=extension/restapi/feed/restapi|categories&level=$1  [L]
+
 #REST API categories filter parent
-RewriteRule ^api/rest/categories/parent/?([0-9]+) index.php?route=feed/rest_api/categories&parent=$1  [L]
+RewriteRule ^api/rest/categories/parent/?([0-9]+) index.php?route=extension/restapi/feed/restapi|categories&parent=$1  [L]
+
 #REST API selected category
-RewriteRule ^api/rest/categories/?([0-9]+) index.php?route=feed/rest_api/categories&id=$1  [L]
-RewriteRule ^api/rest/categories/extended/limit/?([0-9]+)/page/?([0-9]+) index.php?route=feed/rest_api/categories&limit=$1&page=$2&extended=1  [L]
+RewriteRule ^api/rest/categories/?([0-9]+) index.php?route=extension/restapi/feed/restapi|categories&id=$1  [L]
+RewriteRule ^api/rest/categories/extended/limit/?([0-9]+)/page/?([0-9]+) index.php?route=extension/restapi/feed/restapi|categories&limit=$1&page=$2&extended=1  [L]
+
 #REST API categories
-RewriteRule ^api/rest/categories index.php?route=feed/rest_api/categories [L]
+RewriteRule ^api/rest/categories index.php?route=extension/restapi/feed/restapi|categories [L]
 #######################################MANUFACTURER#################################################################
 #REST API selected manufacturer
-RewriteRule ^api/rest/manufacturers/?([0-9]+) index.php?route=feed/rest_api/manufacturers&id=$1  [L]
+RewriteRule ^api/rest/manufacturers/?([0-9]+) index.php?route=extension/restapi/feed/restapi|manufacturers&id=$1  [L]
+
 #REST API manufacturers
-RewriteRule ^api/rest/manufacturers index.php?route=feed/rest_api/manufacturers  [L]
+RewriteRule ^api/rest/manufacturers index.php?route=extension/restapi/feed/restapi|manufacturers  [L]
 #######################################ORDERS######################################################################
 #REST API order history
-RewriteRule ^api/rest/orderhistory/?([0-9]+) index.php?route=feed/rest_api/orderhistory&id=$1  [L]
+RewriteRule ^api/rest/orderhistory/?([0-9]+) index.php?route=extension/restapi/feed/restapi|orderhistory&id=$1  [L]
+
 #REST API selected orders
-#RewriteRule ^api/rest/orders/?([0-9]+) index.php?route=feed/rest_api/orders&id=$1  [L]
+#RewriteRule ^api/rest/orders/?([0-9]+) index.php?route=extension/restapi/feed/restapi|orders&id=$1  [L]
+
 #REST API Orders with details filter by date_added range
-#RewriteRule ^api/rest/orders/details/added_from/([^/]+)/added_to/([^/]+)/?$ index.php?route=feed/rest_api/listorderswithdetails&filter_date_added_from=$1&filter_date_added_to=$2 [L]
+#RewriteRule ^api/rest/orders/details/added_from/([^/]+)/added_to/([^/]+)/?$ index.php?route=extension/restapi/feed/restapi|listorderswithdetails&filter_date_added_from=$1&filter_date_added_to=$2 [L]
+
 #REST API Orders with details filter by date_added from till now
-#RewriteRule ^api/rest/orders/details/added_from/([^/]+)/?$ index.php?route=feed/rest_api/listorderswithdetails&filter_date_added_from=$1 [L]
+#RewriteRule ^api/rest/orders/details/added_from/([^/]+)/?$ index.php?route=extension/restapi/feed/restapi|listorderswithdetails&filter_date_added_from=$1 [L]
+
 #REST API Orders with details filter by date_added on
-#RewriteRule ^api/rest/orders/details/added_on/([^/]+)/?$ index.php?route=feed/rest_api/listorderswithdetails&filter_date_added_on=$1 [L]
+#RewriteRule ^api/rest/orders/details/added_on/([^/]+)/?$ index.php?route=extension/restapi/feed/restapi|listorderswithdetails&filter_date_added_on=$1 [L]
+
 #REST API Orders with details filter by date_modified range
-#RewriteRule ^api/rest/orders/details/modified_from/([^/]+)/modified_to/([^/]+)/?$ index.php?route=feed/rest_api/listorderswithdetails&filter_date_modified_from=$1&filter_date_modified_to=$2 [L]
+#RewriteRule ^api/rest/orders/details/modified_from/([^/]+)/modified_to/([^/]+)/?$ index.php?route=extension/restapi/feed/restapi|listorderswithdetails&filter_date_modified_from=$1&filter_date_modified_to=$2 [L]
+
 #REST API Orders with details filter by date_modified from till now
-#RewriteRule ^api/rest/orders/details/modified_from/([^/]+)/?$ index.php?route=feed/rest_api/listorderswithdetails&filter_date_modified_from=$1 [L]
+#RewriteRule ^api/rest/orders/details/modified_from/([^/]+)/?$ index.php?route=extension/restapi/feed/restapi|listorderswithdetails&filter_date_modified_from=$1 [L]
+
 #REST API Orders with details filter by date_modified on
-#RewriteRule ^api/rest/orders/details/modified_on/([^/]+)/?$ index.php?route=feed/rest_api/listorderswithdetails&filter_date_modified_on=$1 [L]
+#RewriteRule ^api/rest/orders/details/modified_on/([^/]+)/?$ index.php?route=extension/restapi/feed/restapi|listorderswithdetails&filter_date_modified_on=$1 [L]
+
 #REST API Orders with details filter by status
-#RewriteRule ^api/rest/orders/details/status/([0-9,?:,]+) index.php?route=feed/rest_api/listorderswithdetails&filter_order_status_id=$1 [L]
+#RewriteRule ^api/rest/orders/details/status/([0-9,?:,]+) index.php?route=extension/restapi/feed/restapi|listorderswithdetails&filter_order_status_id=$1 [L]
+
 #REST API Orders with details
-#RewriteRule ^api/rest/orders/details index.php?route=feed/rest_api/listorderswithdetails  [L]
+#RewriteRule ^api/rest/orders/details index.php?route=extension/restapi/feed/restapi|listorderswithdetails  [L]
+
 #REST API update order status
-#RewriteRule ^api/rest/order_status/?([0-9]+) index.php?route=feed/rest_api/orderstatus&id=$1  [L]
+#RewriteRule ^api/rest/order_status/?([0-9]+) index.php?route=extension/restapi/feed/restapi|orderstatus&id=$1  [L]
+
 #REST API Orders filtered by user
-#RewriteRule ^api/rest/orders/user/?([0-9]+) index.php?route=feed/rest_api/userorders&user=$1  [L]
+#RewriteRule ^api/rest/orders/user/?([0-9]+) index.php?route=extension/restapi/feed/restapi|userorders&user=$1  [L]
+
 #REST API orders
-#RewriteRule ^api/rest/orders index.php?route=feed/rest_api/orders  [L]
+#RewriteRule ^api/rest/orders index.php?route=extension/restapi/feed/restapi|orders  [L]
 #######################################CUSTOMERS##################################################################
 #REST API selected customers
-RewriteRule ^api/rest/customers/?([0-9]+) index.php?route=feed/rest_api/customers&id=$1  [L]
+RewriteRule ^api/rest/customers/?([0-9]+) index.php?route=extension/restapi/feed/restapi|customers&id=$1  [L]
 #REST API customers
-RewriteRule ^api/rest/customers index.php?route=feed/rest_api/customers  [L]
+RewriteRule ^api/rest/customers index.php?route=extension/restapi/feed/restapi|customers  [L]
 #######################################LANGUAGES#################################################################
 #REST API selected language
-RewriteRule ^api/rest/languages/?([0-9]+) index.php?route=feed/rest_api/languages&id=$1  [L]
+RewriteRule ^api/rest/languages/?([0-9]+) index.php?route=extension/restapi/feed/restapi|languages&id=$1  [L]
 #REST API languages
-RewriteRule ^api/rest/languages index.php?route=feed/rest_api/languages [L]
+RewriteRule ^api/rest/languages index.php?route=extension/restapi/feed/restapi|languages [L]
 ##############################################STORE###############################################################
 #REST API selected store
-RewriteRule ^api/rest/stores/?([0-9]+) index.php?route=feed/rest_api/stores&id=$1  [L]
+RewriteRule ^api/rest/stores/?([0-9]+) index.php?route=extension/restapi/feed/restapi|stores&id=$1  [L]
 #REST API stores
-RewriteRule ^api/rest/stores index.php?route=feed/rest_api/stores [L]
+RewriteRule ^api/rest/stores index.php?route=extension/restapi/feed/restapi|stores [L]
 #######################################COUNTRY###################################################################
 #REST API selected country
-RewriteRule ^api/rest/countries/?([0-9]+) index.php?route=feed/rest_api/countries&id=$1  [L]
+RewriteRule ^api/rest/countries/?([0-9]+) index.php?route=extension/restapi/feed/restapi|countries&id=$1  [L]
 #REST API countries
-RewriteRule ^api/rest/countries index.php?route=feed/rest_api/countries [L]
+RewriteRule ^api/rest/countries index.php?route=extension/restapi/feed/restapi|countries [L]
 #######################################SESSION#####################################################################
 #REST API get session
-RewriteRule ^api/rest/session index.php?route=feed/rest_api/session  [L]
+RewriteRule ^api/rest/session index.php?route=extension/restapi/feed/restapi|session  [L]
 #######################################CART####################################################
 #REST API cart bulk functions
 RewriteRule ^api/rest/cart_bulk index.php?route=rest/cart/bulkcart  [L]
@@ -224,19 +296,21 @@ RewriteRule ^api/rest/cart/update index.php?route=rest/cart/updatecartv2  [L]
 RewriteRule ^api/rest/cart index.php?route=rest/cart/cart  [L]
 #######################################CUSTOMERS####################################################
 #REST API registration
-RewriteRule ^api/rest/register index.php?route=rest/register/register  [L]
+RewriteRule ^api/rest/register index.php?route=extension/restapi/rest/register|register  [L]
 #REST API login
-RewriteRule ^api/rest/login index.php?route=rest/login/login  [L]
+RewriteRule ^api/rest/login index.php?route=extension/restapi/rest/login/login  [L]
+#REST API updateSession
+RewriteRule ^api/rest/login/updateSession index.php?route=extension/restapi/rest/login|updateSession  [L]
 #REST API social login
-RewriteRule ^api/rest/sociallogin index.php?route=rest/login/socialLogin  [L]
+RewriteRule ^api/rest/sociallogin index.php?route=extension/restapi/rest/login/socialLogin  [L]
 #REST API logout
-RewriteRule ^api/rest/logout index.php?route=rest/logout/logout  [L]
+RewriteRule ^api/rest/logout index.php?route=extension/restapi/rest/logout/logout  [L]
 #REST API forgotten password
-RewriteRule ^api/rest/forgotten index.php?route=rest/forgotten/forgotten  [L]
+RewriteRule ^api/rest/forgotten index.php?route=extension/restapi/rest/forgotten/forgotten  [L]
 #REST API multivendor registration
-RewriteRule ^api/rest/multivendor_signup index.php?route=rest/multivendor/register  [L]
+RewriteRule ^api/rest/multivendor_signup index.php?route=extension/restapi/rest/multivendor/register  [L]
 #REST API multivendor infos
-RewriteRule ^api/rest/multivendor_infos index.php?route=rest/multivendor/infos  [L]
+RewriteRule ^api/rest/multivendor_infos index.php?route=extension/restapi/rest/multivendor/infos  [L]
 #######################################VOUCHER####################################################
 #REST API add voucher
 RewriteRule ^api/rest/voucher index.php?route=rest/cart/voucher  [L]
@@ -313,9 +387,9 @@ RewriteRule ^api/rest/pay index.php?route=rest/confirm/confirm&page=pay  [L]
 RewriteRule ^api/rest/contact index.php?route=rest/contact/send  [L]
 #######################################INFORMATION#################################################################
 #REST API selected information
-RewriteRule ^api/rest/information/?([0-9]+) index.php?route=feed/rest_api/information&id=$1  [L]
+RewriteRule ^api/rest/information/?([0-9]+) index.php?route=extension/restapi/feed/restapi/information&id=$1  [L]
 #REST API information
-RewriteRule ^api/rest/information index.php?route=feed/rest_api/information  [L]
+RewriteRule ^api/rest/information index.php?route=extension/restapi/feed/restapi/information  [L]
 #######################################RETURN#################################################################
 #REST API selected return
 RewriteRule ^api/rest/returns/?([0-9]+) index.php?route=rest/return/returns&id=$1  [L]
@@ -330,6 +404,16 @@ RewriteRule ^api/rest/newsletter/unsubscribe index.php?route=rest/account/newsle
 RewriteRule ^api/rest/shippingquotes/?([a-zA-Z0-9.\s]+) index.php?route=rest/cart/shippingquotes&id=$1  [L]
 RewriteRule ^api/rest/shippingquotes index.php?route=rest/cart/shippingquotes  [L]
 #######################################Shopping Cart Rest API END####################################
+#######################################SHIPPING QUOTES######################################################
+#REST API Seller
+RewriteRule ^api/rest/seller index.php?route=extension/restapi/rest/seller|seller  [L]
+#######################################Shopping Cart Rest API END####################################
+
+
+
+
+
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !.*\.(ico|gif|jpg|jpeg|png|webp|js|css|svg)

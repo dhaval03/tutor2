@@ -225,7 +225,12 @@ class Installer extends \Opencart\System\Engine\Controller {
 			$zip = new \ZipArchive();
 
 			if ($zip->open($file, \ZipArchive::RDONLY)) {
+				// for( $i = 0; $i < $zip->numFiles; $i++ ){ 
+					// $stat = $zip->statIndex( $i ); 
+					// print_r( basename( $stat['name'] ) . PHP_EOL ); 
+				// }
                 $install_info = json_decode($zip->getFromName('install.json'), true);
+				print_r ($install_info);
 
 				if ($install_info) {
 					if (!$install_info['name']) {

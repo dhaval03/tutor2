@@ -33,7 +33,7 @@ class Register extends \RestController
 
         $this->sendResponse();
     }
-
+ 
 
     public function registerCustomer($data)
     {
