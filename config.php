@@ -3,7 +3,7 @@
 define('APPLICATION', 'Catalog');
 
 // HTTP
-define('HTTP_SERVER', 'http://127.0.0.1/tutor2/');
+define('HTTP_SERVER', 'http://localhost/amar123/tutor2/');
 
 // DIR
 define('DIR_OPENCART', dirname(__FILE__).'/');
@@ -26,7 +26,7 @@ define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
-define('DB_DATABASE', 'tutor');
+define('DB_DATABASE', 'tutornew');
 define('DB_PORT', '3306');
 define('DB_PREFIX', '');
 
