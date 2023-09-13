@@ -84,6 +84,23 @@ class Customer extends \Opencart\System\Engine\Model {
 
 		return $query->row;
 	}
+	
+	public function loginCustomerById($customer_id){
+		$query = $this->db->query("SELECT email from " . DB_PREFIX . "customer where customer_id='".(int)$customer_id."'");
+		return $query->row;
+	}
+	
+	public function updateCustomerData($session, $customer_id){
+		$cart = isset($session->data['cart']) ? json_encode($session->data['cart']) : '';
+		$wishlist = isset($session->data['wishlist']) ? json_encode($session->data['wishlist']) : '';
+
+		//$this->db->query("UPDATE " . DB_PREFIX . "customer SET cart = '" . $cart . "', wishlist = '" . $wishlist . "' WHERE customer_id = '" . (int)$customer_id . "'");
+	}
+	
+	public function updateSession($session, $access_token) {
+		$query = $this->db->query("Update oauth_access_tokens SET data = '" . $this->db->escape(json_encode($session)) . "', expires = expires WHERE access_token = '" . $this->db->escape($access_token) . "'");
+
+	}
 
 	public function getTotalCustomersByEmail(string $email): int {
 		$query = $this->db->query("SELECT COUNT(*) AS `total` FROM `" . DB_PREFIX . "customer` WHERE LCASE(`email`) = '" . $this->db->escape(oc_strtolower($email)) . "'");

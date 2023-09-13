@@ -11,8 +11,10 @@
  * @link       https://opencart-api.com/product/shopping-cart-rest-api/
  * @documentations https://opencart-api.com/opencart-rest-api-documentations/
  */
+// namespace Opencart\Catalog\Controller\Extension\RestApi\Rest;
+// require_once(DIR_EXTENSION . 'engine/restcontroller.php');
 namespace Opencart\Catalog\Controller\Extension\RestApi\Rest;
-require_once(DIR_SYSTEM . 'engine/restcontroller.php');
+require_once(DIR_EXTENSION . 'restapi/system/engine/restcontroller.php');
 
 class Register extends \RestController
 {
@@ -40,6 +42,7 @@ class Register extends \RestController
 			//echo'ff';exit;
         $this->language->load('checkout/checkout');
         $this->language->load('checkout/cart');
+		$this->load->language('account/register');
         $this->load->model('account/customer');
 
 
