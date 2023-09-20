@@ -32,8 +32,8 @@ abstract class RestController extends \Opencart\System\Engine\Controller
     {
 
         /*check rest api is enabled*/
-        $rest_api_licensed_on = $this->config->get('module_shoppingcartrestapi_licensed_on');
-        if (!$this->config->get('module_shoppingcartrestapi_status') || empty($rest_api_licensed_on)) {
+        $rest_api_licensed_on = $this->config->get('module_shopping_cart_rest_api_licensed_on');
+        if (!$this->config->get('module_shopping_cart_rest_api_status') || empty($rest_api_licensed_on)) {
             $this->json["error"][] = 'Shopping Cart Rest API is disabled. Enable it!';
             $this->statusCode = 403;
             $this->sendResponse();
@@ -121,8 +121,8 @@ abstract class RestController extends \Opencart\System\Engine\Controller
         $this->response->addHeader('Content-Type: application/json; charset=utf-8');
 
         /*check logging is enabled or not*/
-        if ($this->config->get('module_shoppingcartrestapi_enable_logging')) {
-            $this->enableLogging = (int)$this->config->get('module_shoppingcartrestapi_enable_logging');
+        if ($this->config->get('module_shopping_cart_rest_api_enable_logging')) {
+            $this->enableLogging = (int)$this->config->get('module_shopping_cart_rest_api_enable_logging');
         }
 
         if ($this->enableLogging) {
@@ -226,8 +226,8 @@ abstract class RestController extends \Opencart\System\Engine\Controller
         \OAuth2\Autoloader::register();
 
         $config = array(
-            'id_lifetime' => $this->config->get('module_shoppingcartrestapi_token_ttl'),
-            'access_lifetime' => $this->config->get('module_shoppingcartrestapi_token_ttl')
+            'id_lifetime' => $this->config->get('module_shopping_cart_rest_api_token_ttl'),
+            'access_lifetime' => $this->config->get('module_shopping_cart_rest_api_token_ttl')
         );
 
         // $dsn is the Data Source Name for your database, for exmaple "mysql:dbname=my_oauth2_db;host=localhost"
@@ -354,11 +354,11 @@ abstract class RestController extends \Opencart\System\Engine\Controller
         if (isset($headers['x-oc-image-dimension'])) {
             $d = $headers['x-oc-image-dimension'];
             $d = explode('x', $d);
-            $this->config->set('config_shoppingcartrestapi_image_width', $d[0]);
-            $this->config->set('config_shoppingcartrestapi_image_height', $d[1]);
+            $this->config->set('config_shopping_cart_rest_api_image_width', $d[0]);
+            $this->config->set('config_shopping_cart_rest_api_image_height', $d[1]);
         } else {
-            $this->config->set('config_shoppingcartrestapi_image_width', 500);
-            $this->config->set('config_shoppingcartrestapi_image_height', 500);
+            $this->config->set('config_shopping_cart_rest_api_image_width', 500);
+            $this->config->set('config_shopping_cart_rest_api_image_height', 500);
         }
     }
 
@@ -454,7 +454,7 @@ abstract class RestController extends \Opencart\System\Engine\Controller
 
     private function ipValidation()
     {
-        $allowedIPs = $this->config->get('module_shoppingcartrestapi_allowed_ip');
+        $allowedIPs = $this->config->get('module_shopping_cart_rest_api_allowed_ip');
 
         if (!empty($allowedIPs)) {
             $ips = explode(",", $allowedIPs);
