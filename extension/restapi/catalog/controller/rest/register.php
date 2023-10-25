@@ -189,7 +189,7 @@ class Register extends \RestController
                     // Default Payment Address
                     $this->load->model('account/address');
 
-                    $this->session->data['payment_address'] = $this->model_account_address->getAddress($this->customer->getAddressId());
+                    $this->session->data['payment_address'] = $this->model_account_address->getAddress($this->customer->isLogged(),$this->customer->getAddressId());
 
                     if (!empty($data['shipping_address'])) {
                         $this->session->data['shipping_address'] = $this->model_account_address->getAddress($this->customer->getAddressId());
